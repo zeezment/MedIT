@@ -1,9 +1,33 @@
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the poll index.")
+class Index():
+    pass
 
 
-def detail(request, patient_id):
-    return HttpResponse("You're looking at patient %s." % patient_id)
+class Login():
+    pass
+
+
+class Sign_Up():
+    pass
+
+
+class View_Patient_Details():
+    pass
+
+
+class Edit_Patient_Details():
+    pass
+
+
+class Edit_Prescription_Details():
+    pass
+
+
+class View_Prescription_Details():
+    pass
+
+
+class View_Delivery_Schedule():
+    pass
