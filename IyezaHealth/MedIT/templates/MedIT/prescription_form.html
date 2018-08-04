@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Prescription Form</title>
 </head>
 <body>
-
+    <form>
+      <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" class="form-control" id="first_name">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" class="form-control" id="last_name">
+      </div>
+      <div class="form-group">
+        <label for="id_no">ID Number:</label>
+        <input type="text" class="form-control" id="id_no">
+      </div>
+      <div class="form-group">
+        <label for="treatment_type">Treatment Type:</label>
+          <select class="form-control" id="treatment_type">
+              <option></option>
+              <option>HIV</option>
+              <option>TB</option>
+              <option>Diabetes</option>
+              <option>High Blood pressure</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="clinic_pickup">Clinic Pickup:</label>
+        <input type="text" class="form-control" id="clinic_pickup">
+      </div>
+      <div class="form-group">
+        <label for="medications">Medications:</label>
+        <input type="text" class="form-control" id="medications">
+      </div>
+      <div class="form-group">
+        <label for="pick_date">Pickup Date:</label>
+        <input type="date" class="form-control" id="pick_date">
+      </div>
+      <div class="form-group">
+        <label for="treatment_status">Pickup Date:</label>
+          <select class="form-control" id="treatment_status">
+              <option></option>
+              <option>Current</option>
+              <option>Discontinued</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 </html>
