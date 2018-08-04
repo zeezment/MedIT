@@ -1,13 +1,9 @@
 
 from django.http import HttpResponse
-<<<<<<< Updated upstream
 from .models import Patient, MedicalInfo, Prescriptions,CompletedDeliveries
-||||||| merged common ancestors
-=======
 from models import Prescriptions
 from django.views.generic import ListView, DetailView, FormView, CreateView, \
     DeleteView, UpdateView
->>>>>>> Stashed changes
 
 
 class Index(ListView):
