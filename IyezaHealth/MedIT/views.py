@@ -1,4 +1,6 @@
+
 from django.http import HttpResponse
+from .models import Patient, MedicalInfo, Prescriptions,CompletedDeliveries
 
 
 class Index():
