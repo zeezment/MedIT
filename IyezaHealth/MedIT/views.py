@@ -1,75 +1,115 @@
-from django.views.generic import TemplateView
+
 from django.http import HttpResponse
-from .models import Patient, MedicalInfo, Prescriptions,CompletedDeliveries
-from models import Prescriptions
+from .models import Patient, MedicalInfo, Prescriptions, CompletedDeliveries
+
 from django.views.generic import ListView, DetailView, FormView, CreateView, \
     DeleteView, UpdateView
 
 
 class Index(ListView):
-    model = Prescriptions
-    template_name = 'templates/index.html'
-    context_object_name = 'index'
+    model = Patient
+
+class Login(ListView):
+    model = Patient
 
 
-class Login(CreateView):
-    model = Prescriptions
-    template_name = 'templates/login.html'
-    context_object_name = 'login'
 
 
-class Sign_Up(CreateView):
-    model = Prescriptions
-    template_name = 'templates/sign_up.html'
-    context_object_name = 'sign_up'
 
 
-class Create_Patient_Details(CreateView):
-    model = Prescriptions
-    template_name = 'templates/edit_patient_details.html'
-
-
-class View_Patient_Details(DetailView):
-    model = Prescriptions
-    template_name = 'templates/view_patient_details.html'
-    context_object_name = 'patient_view'
-
-
-class Edit_Patient_Details(CreateView):
-    model = Prescriptions
-    template_name = 'templates/edit_patient_details.html'
-
-
-class Create_Prescription_Details(CreateView):
-    model = Prescriptions
-    template_name = 'templates/edit_patient_details.html'
-
-
-class Edit_Prescription_Details(CreateView):
+class PatientCreateView(CreateView):
     """
-        A view that handles the creation of a patient prescriptions.
+       A view to handle patients sign up
     """
+    model = Patient
+    template_name = 'templates/patient_form.html'
+    fields = ['id_no', 'first_name', 'last_name', 'address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell', 'enrollment_date']
+
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.created_by = self.request.user
+        patient.last_modified_by = self.request.user
+
+        return super(PatientCreateView.self).form_valid()
+
+
+class PatientUpdateView(UpdateView):
+    """
+       A view to handle updating patient information.
+    """
+    model = Patient
+    template_name = 'templates/patient_update_form.html'
+    fields = ['address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell']
+    context_object_name = 'patient'
+
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.last_modified_by = self.request.user
+
+        return super(PatientUpdateView.self).form_valid()
+
+class PatientDetailView(DetailView):
+    model = Patient
+
+class PatientListView(ListView):
+    model = Patient
+
+class PrescriptionCreateView(CreateView):
+    """
+            A view that handles the creation of a patient prescriptions.
+        """
     model = Prescriptions
-    template_name = 'templates/prescriptions_list.html'
+    template_name = 'templates/prescription_form.html'
     fields = ['treatment_type', 'clinic_pickup', 'medications', 'pick_date',
               'treatment_status']
 
     def form_valid(self, form):
         # set the created by and modified by fields
-        form.instance.created_by = self.request.user
+        prescriptions = self.request.user
         form.instance.last_modified_by = self.request.user
 
 
-class View_Prescription_Details(DetailView):
+class PrescriptionUpdateView(UpdateView):
+    """
+         A view to handle updating prescription information.
+      """
+    model = Patient
+    template_name = 'templates/prescription_update_form.html'
+    fields = ['address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell']
+    context_object_name = 'patient'
+
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.last_modified_by = self.request.user
+
+        return super(PatientUpdateView.self).form_valid()
+
+class PrescriptionDetail(DetailView):
+    model = Patient
+
+
+class PrescriptionListView(ListView):
     """
         A view that handles displaying details of a patients prescriptions
     """
     model = Prescriptions
-    template_name = 'templates/view_prescription_details.html'
+    template_name = 'templates/prescription_list.html'
     context_object_name = 'view_prescription'
 
 
-class View_Delivery_Schedule(DetailView):
-    model = CompletedDeliveries
-    template_name = 'templates/view_delivery_schedules.html'
-    context_object_name = 'schedule_view'
+class DeliveryListView(ListView):
+    model = Patient
+
+class DeliveryDetail(DetailView):
+    model = Patient
+
+

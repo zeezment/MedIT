@@ -1,29 +1,26 @@
 from django.conf.urls import patterns, url
-from .views import (Index, Login, Sign_Up, View_Patient_Details,
-                   Edit_Patient_Details, Edit_Prescription_Details,
-                   View_Prescription_Details, View_Delivery_Schedule,
-                   Create_Patient_Details, Create_Prescription_Details)
+from .views import *
 
 urlpatterns = patterns('',
     url(r'^$', Index.as_view(), name='index'),
     url(r'^login', Login.as_view(), name='login'),
-    url(r'^signup', Sign_Up.as_view(), name='sign_up'),
-    url(r'^(?P<patient_id>\d+)/$', View_Patient_Details.as_view(),
+
+    url(r'^(?P<patient_id>\d+)/$', PatientDetailView.as_view(),
         name='view_patient_details'),
-    url(r'^createPatientDetails', Create_Patient_Details.as_view(),
+    url(r'^createPatientDetails', PatientCreateView.as_view(),
         name='view_patient_details'),
     url(r'^(?P<patient_id>[0-9]+)/editPatientDetails',
-        Edit_Patient_Details.as_view(),
+        PatientUpdateView.as_view(),
         name='view_patient_details'),
-    url(r'^createPrescriptionDetails', Create_Prescription_Details.as_view(),
+    url(r'^createPrescriptionDetails', PrescriptionCreateView.as_view(),
         name='edit_prescription_details'),
     url(r'^(?P<pk>[0-9]+)/editPrescriptionDetails',
-        Edit_Prescription_Details.as_view(),
+       PrescriptionUpdateView.as_view(),
         name='edit_prescription_details'),
     url(r'^(?P<pk>[0-9]+)/viewPrescriptionDetails',
-        View_Prescription_Details.as_view(),
+        PrescriptionDetail.as_view(),
         name='view_prescription_details'),
     url(r'^(?P<pk>[0-9]+)/viewDeliverySchedule',
-        View_Delivery_Schedule.as_view(),
+       DeliveryDetail.as_view(),
         name='view_delivery_schedule'),
 )
