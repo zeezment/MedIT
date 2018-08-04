@@ -46,7 +46,7 @@ function initializeMap() {
           var coords = geo_data[i].schedule[j].deliveries[k].address;
           var latLng = new google.maps.LatLng(coords[0],coords[1]);
           var marker = new google.maps.Marker({ position: latLng, map: map});
-                    console.log(nodes);
+                   // console.log(nodes);
 
             markers.push(marker);
             nodes.push(latLng)
@@ -70,7 +70,7 @@ function initializeMap() {
 
 
     // Add "my location" button
-    var myLocationDiv = document.createElement('div');
+  /*  var myLocationDiv = document.createElement('div');
     new getMyLocation(myLocationDiv, map);
 
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(myLocationDiv);
@@ -91,7 +91,7 @@ function initializeMap() {
                 map.setZoom(12);
             });
         });
-    }
+    }*/
 }
 // Get all durations depending on travel type
 function getDurations(callback) {
@@ -129,13 +129,13 @@ var geo_data = [{"cyclist": "Sizwe",
     {"date":"05/August/2018",
       "deliveries":[
         {"patient_full_name": "Thembi Dube",
-          "address": [-34.02343121813403,18.65338409362164],
+          "address": [-34.03207120936483,18.655756261430383],//-34.02343121813403,18.65338409362164],
         "message": "the dogs are harmless"},
           {"patient_full_name": "Andile Xaba",
-          "address": [-34.024249292355236,18.653512839654354],
+          "address": [-34.03570698851176,18.655094328852783],//-34.024249292355236,18.653512839654354],
         "message": "none"},
           {"patient_full_name": "Babalwa Bengu",
-          "address": [-34.02592098472014,18.65308368621197],
+          "address": [-34.03071563556732,18.66104954395678],//-34.02592098472014,18.65308368621197],
         "message": "none"},
           {"patient_full_name": "Micheal Jackson",
           "address": [-34.02645449662817,18.656302337029842],
@@ -198,7 +198,7 @@ $(document).ready(function() {
                   var coords = geo_data[i].schedule[j].deliveries[k].address;
                   var latLng = new google.maps.LatLng(coords[0],coords[1]);
                   var marker = new google.maps.Marker({ position: latLng, map: map});
-                            console.log(nodes);
+                            //console.log(nodes);
 
                     markers.push(marker);
                     nodes.push(latLng);
@@ -285,12 +285,13 @@ $(document).ready(function() {
                 
                 // Add final route to map
                 var request = {
-                    origin: nodes[route[0]],
+                    origin:new google.maps.LatLng(-34.027641831051646,18.66572856903076) ,//nodes[route[0]],
                     destination: nodes[route[0]],
                     waypoints: waypts,
                     travelMode: google.maps.TravelMode[$('#travel-type').val()],
                     avoidHighways: parseInt($('#avoid-highways').val()) > 0 ? true : false,
                     avoidTolls: false
+
                 };
                 directionsService.route(request, function(response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
@@ -308,20 +309,20 @@ var ga = {
     // Default config
     "crossoverRate": 0.5,
     "mutationRate": 0.1,
-    "populationSize": 50,
-    "tournamentSize": 5,
+    "populationSize": 100,
+    "tournamentSize": 10,
     "elitism": true,
-    "maxGenerations": 50,
+    "maxGenerations": 100,
     
     "tickerSpeed": 60,
 
     // Loads config from HTML inputs
     "getConfig": function() {
         ga.crossoverRate =0.5;// parseFloat($('#crossover-rate').val());
-        ga.mutationRate =0.05; parseFloat($('#mutation-rate').val());
-        ga.populationSize = 100;//parseInt($('#population-size').val()) || 50;
-        ga.elitism = false;//parseInt($('#elitism').val()) || false;
-        ga.maxGenerations = 50;// parseInt($('#maxGenerations').val()) || 50;
+        ga.mutationRate =0.01; parseFloat($('#mutation-rate').val());
+        ga.populationSize = 50;//parseInt($('#population-size').val()) || 50;
+        ga.elitism = true;//parseInt($('#elitism').val()) || false;
+        ga.maxGenerations = 100;// parseInt($('#maxGenerations').val()) || 50;
     },
     
     // Evolves given population
