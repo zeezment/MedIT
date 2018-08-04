@@ -1,4 +1,4 @@
-
+from django.views.generic import TemplateView
 from django.http import HttpResponse
 from .models import Patient, MedicalInfo, Prescriptions,CompletedDeliveries
 from models import Prescriptions
@@ -7,29 +7,42 @@ from django.views.generic import ListView, DetailView, FormView, CreateView, \
 
 
 class Index(ListView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/index.html'
+    context_object_name = 'index'
 
-class Login(ListView):
-    pass
+
+class Login(CreateView):
+    model = Prescriptions
+    template_name = 'templates/login.html'
+    context_object_name = 'login'
 
 
 class Sign_Up(CreateView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/sign_up.html'
+    context_object_name = 'sign_up'
+
 
 class Create_Patient_Details(CreateView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/edit_patient_details.html'
 
 
 class View_Patient_Details(DetailView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/view_patient_details.html'
+    context_object_name = 'patient_view'
 
 
 class Edit_Patient_Details(CreateView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/edit_patient_details.html'
 
 
 class Create_Prescription_Details(CreateView):
-    pass
+    model = Prescriptions
+    template_name = 'templates/edit_patient_details.html'
 
 
 class Edit_Prescription_Details(CreateView):
@@ -37,7 +50,7 @@ class Edit_Prescription_Details(CreateView):
         A view that handles the creation of a patient prescriptions.
     """
     model = Prescriptions
-    template_name = 'templates/edit_prescription_details.html'
+    template_name = 'templates/prescriptions_list.html'
     fields = ['treatment_type', 'clinic_pickup', 'medications', 'pick_date',
               'treatment_status']
 
@@ -58,3 +71,5 @@ class View_Prescription_Details(DetailView):
 
 class View_Delivery_Schedule(DetailView):
     model = CompletedDeliveries
+    template_name = 'templates/view_delivery_schedules.html'
+    context_object_name = 'schedule_view'
