@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df3756cc-84ac-4d3e-b98c-21cc11a9f9b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,25 +51,25 @@
     <session id="-888975386">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="27" />
+          <entry key="html" value="29" />
           <entry key="py" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="27" />
+          <entry key="HTML" value="29" />
           <entry key="Python" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="621" />
+          <entry key="html" value="703" />
           <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="621" />
+          <entry key="HTML" value="703" />
           <entry key="Python" value="10" />
         </counts>
       </usages-collector>
@@ -86,26 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="257">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -113,8 +96,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="4" selection-end-line="51" selection-end-column="11" />
+            <state relative-caret-position="-339">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -154,9 +155,11 @@
         <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/medical_info_list.html" />
         <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/medical_info_update.html" />
         <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/medical_info_form.html" />
-        <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html" />
         <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_view.html" />
         <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html" />
+        <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html" />
+        <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html" />
+        <option value="$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html" />
       </list>
     </option>
   </component>
@@ -333,12 +336,6 @@
     <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -408,17 +405,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html">
+    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="4" selection-end-line="51" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -429,10 +419,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/patient_form.html">
+    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="257">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IyezaHealth/MedIT/templates/MedIT/prescription_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>

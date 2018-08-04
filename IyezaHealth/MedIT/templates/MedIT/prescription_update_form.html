@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Update Prescription</title>
 </head>
 <body>
-
+    <form>
+      <div class="form-group">
+        <label for="id_no">ID Number:</label>
+        <input type="text" class="form-control" id="id_no">
+      </div>
+      <div class="form-group">
+        <label for="treatment_type">Treatment Type:</label>
+          <select class="form-control" id="treatment_type">
+              <option></option>
+              <option>HIV</option>
+              <option>TB</option>
+              <option>Diabetes</option>
+              <option>High Blood pressure</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="clinic_pickup">Clinic Pickup:</label>
+        <input type="text" class="form-control" id="clinic_pickup">
+      </div>
+      <div class="form-group">
+        <label for="medications">Medications:</label>
+        <input type="text" class="form-control" id="medications">
+      </div>
+      <div class="form-group">
+        <label for="pick_date">Pickup Date:</label>
+        <input type="date" class="form-control" id="pick_date">
+      </div>
+      <div class="form-group">
+        <label for="treatment_status">Treatment Status:</label>
+          <select class="form-control" id="treatment_status">
+              <option></option>
+              <option>Current</option>
+              <option>Discontinued</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
 </body>
 </html>
