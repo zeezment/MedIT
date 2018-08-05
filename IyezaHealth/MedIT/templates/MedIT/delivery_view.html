@@ -588,7 +588,6 @@ var ga = {
 };
 </script>
 </head>
-</head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <a class="navbar-brand" href="#index.html">Home</a>
@@ -735,10 +734,30 @@ var ga = {
     </table>
 
   </div>
-            <div class="col-md-9">
+            <div class="col-md-5">
   <div id="map-canvas" style="width:900px; height:560px;"></div>
   <div class="hr vpad"></div>
   </div>
+    <div class="col-md-4">
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Full Name</th>
+                    <th>Address</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entry in geo_data %}
+                <tr>
+                    <td>entry.patient_full_name</td>
+                    <td>entry.address</td>
+                    <td>entry.message</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 
 </div>
