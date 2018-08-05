@@ -1,5 +1,28 @@
 <html>
 <head>
+
+  <!--  <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style> -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA9to6nKL0AajG0MGfPqSp0vnd6iHjW4mQ
 "></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
@@ -163,6 +186,7 @@ function clearMapMarkers() {
     markers = [];
     
     $('#ga-buttons').show();
+   $('#loading-img').hide();
 }
 // Removes map directions
 function clearDirections() {
@@ -197,7 +221,7 @@ $(document).ready(function() {
 
                   var coords = geo_data[i].schedule[j].deliveries[k].address;
                   var latLng = new google.maps.LatLng(coords[0],coords[1]);
-                  var marker = new google.maps.Marker({ position: latLng, map: map});
+                  var marker = new google.maps.Marker({ position: latLng, map: map});//, label:  geo_data[i].schedule[j].deliveries[k].patient_full_name});
                             //console.log(nodes);
 
                     markers.push(marker);
@@ -231,6 +255,7 @@ $(document).ready(function() {
         
         $('#ga-buttons').hide();
 
+    // $('#loading-img').hide();
 
 
 
@@ -319,7 +344,7 @@ var ga = {
     // Loads config from HTML inputs
     "getConfig": function() {
         ga.crossoverRate =0.5;// parseFloat($('#crossover-rate').val());
-        ga.mutationRate =0.01; parseFloat($('#mutation-rate').val());
+        ga.mutationRate =0.05; parseFloat($('#mutation-rate').val());
         ga.populationSize = 50;//parseInt($('#population-size').val()) || 50;
         ga.elitism = true;//parseInt($('#elitism').val()) || false;
         ga.maxGenerations = 100;// parseInt($('#maxGenerations').val()) || 50;
@@ -590,8 +615,8 @@ var ga = {
             <td>Travel Mode: </td>
             <td>
                 <select id="travel-type">
-                    <option value="WALKING">Bicycle</option>
-                    <option value="DRIVING">Car</option>
+                    <option value="DRIVING">Bicycle</option>
+                    <option value="WALKING">Car</option>
                     <!-- <option value="BICYCLING">Bicycle</option> -->
                 </select>
             </td>
@@ -688,6 +713,9 @@ var ga = {
             <td colspan="2"><button id="show-points">Show DropOffs</button>
         </tr>
     </table>
+      <tr id= "loading-img" >
+      <div class="loader" ></div>
+      </tr>
   </div>
 </div>
 </body>
