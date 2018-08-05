@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>List Prescriptions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -28,7 +33,55 @@
       </div>
     </nav>
     <container>
-
+        <div class="row">
+          <div class="col-md-2">
+            ID Number
+          </div>
+          <div class="col-md-1">
+            Treatment Type
+          </div>
+          <div class="col-md-2">
+            Clinic Pick-up
+          </div>
+          <div class="col-md-2">
+            Medications
+          </div>
+          <div class="col-md-2">
+            Pick-up Date
+          </div>
+          <div class="col-md-2">
+            Treatment Status
+          </div>
+          <div class="col-md-1">
+            Confirm Pick-up
+          </div>
+        </div>
+        <!--For each row execute below-->
+        {% for entry in entries_list %}
+        <div class="row">
+            <div class="col-md-2">
+                entry.id_no
+            </div>
+            <div class="col-md-1">
+                entry.treatment_type
+            </div>
+            <div class="col-md-2">
+                entry.clinic_pickup
+            </div>
+            <div class="col-md-2">
+                entry.medications
+            </div>
+            <div class="col-md-2">
+                entry.pick_date
+            </div>
+            <div class="col-md-2">
+                entry.treatment_status
+            </div>
+            <div>
+               <button type="submit" class="btn btn-primary">Delivered</button>
+            </div>
+        </div>
+        {% endfor %}
     </container>
 </body>
 </html>

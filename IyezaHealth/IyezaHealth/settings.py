@@ -70,7 +70,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-   "/IyezaHealth/MedIT/static/",
+   "/IyezaHealth/MedIT/static/"
 )
 
 # List of finder classes that know how to find static files in
