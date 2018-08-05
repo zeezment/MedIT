@@ -24,11 +24,11 @@ urlpatterns = patterns('',
        DeliveryDetail.as_view(),
         name='view_delivery_schedule'),
 
-    url(r'^patient_list',
-        patient_list, name='patient_list'),
+    url(r'^patient_details',
+        PrescriptionCreateView.as_view(), name='patient_list'),
 
      url(r'^prescription_list',
-        patient_list, name='prescription_list'),
+         PrescriptionDetail.as_view(), name='prescription_list'),
 
     url(r'^delivery_view',
         delivery_view, name='delivery_view'),
