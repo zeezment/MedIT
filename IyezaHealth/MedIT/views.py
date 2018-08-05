@@ -105,7 +105,6 @@ class PrescriptionListView(ListView):
     template_name = 'templates/prescription_list.html'
     context_object_name = 'view_prescription'
 
-
 class DeliveryListView(ListView):
     model = Patient
 
