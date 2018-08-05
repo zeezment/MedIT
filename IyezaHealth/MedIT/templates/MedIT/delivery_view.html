@@ -154,7 +154,8 @@ var geo_data = [{"cyclist": "Sizwe",
         "message": "use the small gate"}
       ]
     }
-]}];;
+]}];
+var deliveries = geo_data[0].schedule[0].deliveries;
 
 // Removes markers and temporary paths
 function clearMapMarkers() {
@@ -618,14 +619,14 @@ var ga = {
 
     <div class="container">
         <div class="row">
-
-            <h4>View Delivery Information</h4>
-
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h4>View Delivery Information</h4>
+                </div>
             </div>
-
+<br/>
 <div class="row">
-                  <div class="col-md-3">
-
+    <div class="col-md-3">
     <table>
         <tr>
             <td colspan="2"><b>Settings</b></td>
@@ -649,120 +650,69 @@ var ga = {
                 </select>
             </td>
         </tr>
-      <!--  <tr>
-            <td>Population Size: </td>
-            <td>
-                <select id="population-size">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50" selected="selected">50</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Mutation Rate: </td>
-            <td>
-                <select id="mutation-rate">
-                    <option value="0.00">0.00</option>
-                    <option value="0.05">0.01</option>
-                    <option value="0.05">0.05</option>
-                    <option value="0.1" selected="selected">0.1</option>
-                    <option value="0.2">0.2</option>
-                    <option value="0.4">0.4</option>
-                    <option value="0.7">0.7</option>
-                    <option value="1">1.0</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Crossover Rate: </td>
-            <td>
-                <select id="crossover-rate">
-                    <option value="0.0">0.0</option>
-                    <option value="0.1">0.1</option>
-                    <option value="0.2">0.2</option>
-                    <option value="0.3">0.3</option>
-                    <option value="0.4">0.4</option>
-                    <option value="0.5" selected="selected">0.5</option>
-                    <option value="0.6">0.6</option>
-                    <option value="0.7">0.7</option>
-                    <option value="0.8">0.8</option>
-                    <option value="0.9">0.9</option>
-                    <option value="1">1.0</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Elitism: </td>
-            <td>
-                <select id="elitism">
-                    <option value="1" selected="selected">Enabled</option>
-                    <option value="0">Disabled</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Max Generations: </td>
-            <td>
-                <select id="generations">
-                    <option value="20">20</option>
-                    <option value="50" selected="selected">50</option>
-                    <option value="100">100</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><b>Debug Info</b></td>
-        </tr>-->
         <tr>
             <td>No. DropOffs: </td>
             <td id="destinations-count">0</td>
         </tr>
-        <!-- <tr class="ga-info" style="display:none;">
-            <td>Generations: </td><td id="generations-passed">0</td>
+        <tr>
+            <td><button class="btn btn-success" id="find-route">Start</button></td>
+            <td><button class="btn btn-danger" id="clear-map">Clear</button></td>
         </tr>
-        <tr class="ga-info" style="display:none;">
-            <td>Best Time: </td><td id="best-time">?</td>
-        </tr>-->
-        <tr id="ga-buttons">
-            <td colspan="2"><button id="find-route">Start</button> <button id="clear-map">Clear</button></td>
-            <td colspan="2"><button id="show-points">Show DropOffs</button>
+        <tr>
+            <td><button class="btn btn-success" id="show-points">Show DropOffs</button></td>
         </tr>
     </table>
-
   </div>
+
   <div class="col-md-5">
-  <div id="map-canvas" style="width:900px; height:560px;"></div>
+  <div id="map-canvas" style="width:400px; height:400px;"></div>
   <div class="hr vpad"></div>
   </div>
     <div class="col-md-4">
-        <table>
+        <table class="table-striped">
             <thead>
                 <tr>
-                    <th>Patient Full Name</th>
+                    <th>Full name</th>
                     <th>Address</th>
                     <th>Message</th>
                 </tr>
             </thead>
             <tbody>
-            {% for entry in geo_data %}
                 <tr>
-                    <td>entry.patient_full_name</td>
-                    <td>entry.address</td>
-                    <td>entry.message</td>
+                    <td>Thembi Dube</td>
+                    <td>[-34.03207120936483, 18.655756261430383]</td>
+                    <td>none</td>
                 </tr>
-            {% endfor %}
+                <tr>
+                    <td>Andile Xaba</td>
+                    <td>[-34.03570698851176, 18.655094328852783]</td>
+                    <td>The dogs are harmless</td>
+                </tr>
+                <tr>
+                    <td>Babalwa Bengu</td>
+                    <td>[-34.03071563556732, 18.66104954395678]</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>Michael Jackson</td>
+                    <td>[-34.02645449662817, 18.656302337029842]</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>Florence Diale</td>
+                    <td>[-34.02513849452111, 18.660980109551815]</td>
+                    <td>Come in at the back</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
 
 </div>
-
-
+        <br/>
+<div>
+    <button class="btn btn-success" id="send-sms">Send Delivery Notification</button>
+</div>
     </div>
 
 
