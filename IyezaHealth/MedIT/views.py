@@ -1,7 +1,9 @@
 
 from django.http import HttpResponse
 from .models import Patient, MedicalInfo, Prescriptions, CompletedDeliveries
-
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, FormView, CreateView, \
     DeleteView, UpdateView
 
@@ -22,7 +24,7 @@ class PatientCreateView(CreateView):
        A view to handle patients sign up
     """
     model = Patient
-    template_name = 'templates/patient_form.html'
+    template_name = 'patient_form.html'
     fields = ['id_no', 'first_name', 'last_name', 'address', 'email', 'cellphone',
               'gender', 'next_of_kin_name', 'next_of_kin_cell', 'enrollment_date']
 
@@ -41,7 +43,7 @@ class PatientUpdateView(UpdateView):
        A view to handle updating patient information.
     """
     model = Patient
-    template_name = 'templates/patient_update_form.html'
+    template_name = 'patient_update_form.html'
     fields = ['address', 'email', 'cellphone',
               'gender', 'next_of_kin_name', 'next_of_kin_cell']
     context_object_name = 'patient'
@@ -65,7 +67,7 @@ class PrescriptionCreateView(CreateView):
             A view that handles the creation of a patient prescriptions.
         """
     model = Prescriptions
-    template_name = 'templates/prescription_form.html'
+    template_name = 'prescription_form.html'
     fields = ['treatment_type', 'clinic_pickup', 'medications', 'pick_date',
               'treatment_status']
 
@@ -80,7 +82,7 @@ class PrescriptionUpdateView(UpdateView):
          A view to handle updating prescription information.
       """
     model = Patient
-    template_name = 'templates/prescription_update_form.html'
+    template_name = 'prescription_update_form.html'
     fields = ['address', 'email', 'cellphone',
               'gender', 'next_of_kin_name', 'next_of_kin_cell']
     context_object_name = 'patient'
@@ -102,7 +104,7 @@ class PrescriptionListView(ListView):
         A view that handles displaying details of a patients prescriptions
     """
     model = Prescriptions
-    template_name = 'templates/prescription_list.html'
+    template_name = 'prescription_list.html'
     context_object_name = 'view_prescription'
 
 class DeliveryListView(ListView):
@@ -112,6 +114,15 @@ class DeliveryDetail(DetailView):
     model = Patient
 
 
-'''def pat_form(request):
+
+def patient_list(request):
         context = RequestContext(request)
-        return render_to_response('patient_form.html', context)'''
+        return render_to_response('patient_list.html', context)
+
+def prescription_list(request):
+    context = RequestContext(request)
+    return render_to_response('prescription_list.html', context)
+
+def delivery_list(request):
+        context = RequestContext(request)
+        return render_to_response('delivery_list.html', context)
