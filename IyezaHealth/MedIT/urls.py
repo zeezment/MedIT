@@ -7,16 +7,20 @@ urlpatterns = patterns('',
 
     url(r'^(?P<patient_id>\d+)/$', PatientDetailView.as_view(),
         name='view_patient_details'),
+
     url(r'^createPatientDetails', PatientCreateView.as_view(),
         name='view_patient_details'),
     url(r'^editPatientDetails',
         PatientUpdateView.as_view(),
         name='view_patient_details'),
+
     url(r'^createPrescriptionDetails', PrescriptionCreateView.as_view(),
         name='edit_prescription_details'),
+
     url(r'^editPrescriptionDetails',
        PrescriptionUpdateView.as_view(),
         name='edit_prescription_details'),
+
     url(r'^viewPrescriptionDetails',
         PrescriptionDetail.as_view(),
         name='view_prescription_details'),
