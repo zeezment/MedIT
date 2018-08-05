@@ -107,7 +107,9 @@ ROOT_URLCONF = 'IyezaHealth.urls'
 WSGI_APPLICATION = 'IyezaHealth.wsgi.application'
 
 TEMPLATE_DIRS = (
-    #os.path.join('IyezaHealth', 'templates')
+    #"/IyezaHealth/MedIT/templates/MedIT"
+
+    os.path.join('MedIT', 'templates/MedIT')
 )
 
 INSTALLED_APPS = (

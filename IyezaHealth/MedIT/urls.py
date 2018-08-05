@@ -23,4 +23,13 @@ urlpatterns = patterns('',
     url(r'^(?P<pk>[0-9]+)/viewDeliverySchedule',
        DeliveryDetail.as_view(),
         name='view_delivery_schedule'),
+
+    url(r'^patient_list',
+        patient_list, name='patient_list'),
+
+     url(r'^prescription_list',
+        patient_list, name='prescription_list'),
+
+    url(r'^delivery_list',
+        patient_list, name='delivery_list'),
 )
