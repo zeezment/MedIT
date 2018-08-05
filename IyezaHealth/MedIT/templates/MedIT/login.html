@@ -1,39 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+{%load static%}
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css' %}">
+  <link href="{%static 'metisMenu/metisMenu.min.css' %}" rel="stylesheet">
+  <link href="{%static 'dist/css/sb-admin-2.css' %}" rel="stylesheet">
+  <link href="{%static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand" href="#index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#patient_list">Patient Details</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#prescription_list">Prescription Details</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#delivery_list">Delivery Schedule</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-        </ul>
+    <div class="login-panel panel panel-default">
+      <div class="panel-heading">
+        <h3>Login</h3>
       </div>
-    </nav>
-    <container>
-        <form class="signup">
+    </div>
+    <div class="panel-body">
+        <form>
           <div class="form-group">
             <label for="first_name">First Name:</label>
             <input type="text" class="form-control" id="first_name">
@@ -44,6 +27,6 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </container>
+    </div>
 </body>
 </html>

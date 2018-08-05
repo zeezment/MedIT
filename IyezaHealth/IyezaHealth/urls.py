@@ -7,7 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     #url(r'^$', 'MedIT.views.home', name='home'),
     url(r'^MedIT/', include('MedIT.urls')),
-    url(r'^$', 'MedIT.views.home', name='home'),
+
+    #url(r'^$', 'MedIT.views.home', name='home'),
 
 # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

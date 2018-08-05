@@ -113,3 +113,6 @@ class DeliveryDetail(DetailView):
     model = Patient
 
 
+'''def pat_form(request):
+        context = RequestContext(request)
+        return render_to_response('patient_form.html', context)'''
