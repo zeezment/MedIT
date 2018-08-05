@@ -7,10 +7,11 @@ auth_token = "9ed1095be621dc9d0c92a46b7e037dd3"
 
 client = Client(account_sid, auth_token)
 
-message = client.messages.create(
-    to="+27614062120",
-    from_="+13476581248",
-    body="Hi Gogo Flo! Your medication will be delivered tomorrow, 06 August2018, between 8am-12pm. "
-         "See you tomorrow and stay healthy!")
+def send_notification():
+    message = client.messages.create(
+        to="+27614062120",
+        from_="+13476581248",
+        body="Hi Gogo Flo! Your medication will be delivered tomorrow, 06 August2018, between 8am-12pm. "
+             "See you tomorrow and stay healthy!")
 
-print(message.sid)
+    print(message.sid)

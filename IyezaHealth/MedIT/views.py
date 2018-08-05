@@ -162,4 +162,6 @@ def prescription_list(request):
 
 def delivery_view(request):
         context = RequestContext(request)
+        #import messaging
+        #messaging.send_notification()
         return render_to_response('delivery_view.html', context)
