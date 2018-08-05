@@ -38,7 +38,7 @@ class PatientCreateView(CreateView):
         return super(PatientCreateView.self).form_valid()
 
 
-class PatientUpdateView(UpdateView):
+class PatientUpdateView(CreateView):
     """
        A view to handle updating patient information.
     """
@@ -56,11 +56,36 @@ class PatientUpdateView(UpdateView):
 
         return super(PatientUpdateView.self).form_valid()
 
-class PatientDetailView(DetailView):
+class PatientDetailView(CreateView):
     model = Patient
+    template_name = 'patient_view.html'
+    fields = ['address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell']
+    context_object_name = 'patient'
 
-class PatientListView(ListView):
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.last_modified_by = self.request.user
+
+        return super(PatientDetailView.self).form_valid()
+
+
+class PatientListView(CreateView):
     model = Patient
+    template_name = 'patient_list.html'
+    fields = ['address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell']
+    context_object_name = 'patient'
+
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.last_modified_by = self.request.user
+
+        return super(PatientUpdateView.self).form_valid()
 
 class PrescriptionCreateView(CreateView):
     """
@@ -77,7 +102,7 @@ class PrescriptionCreateView(CreateView):
         form.instance.last_modified_by = self.request.user
 
 
-class PrescriptionUpdateView(UpdateView):
+class PrescriptionUpdateView(CreateView):
     """
          A view to handle updating prescription information.
       """
@@ -97,6 +122,18 @@ class PrescriptionUpdateView(UpdateView):
 
 class PrescriptionDetail(DetailView):
     model = Patient
+    template_name = 'prescription_view.html'
+    fields = ['address', 'email', 'cellphone',
+              'gender', 'next_of_kin_name', 'next_of_kin_cell']
+    context_object_name = 'patient'
+
+    def form_valid(self, form):
+        # set the created by and modified by fields
+        patient = form.save(commit=False)
+
+        patient.last_modified_by = self.request.user
+
+        return super(PatientUpdateView.self).form_valid()
 
 
 class PrescriptionListView(ListView):
@@ -123,6 +160,6 @@ def prescription_list(request):
     context = RequestContext(request)
     return render_to_response('prescription_list.html', context)
 
-def delivery_list(request):
+def delivery_view(request):
         context = RequestContext(request)
-        return render_to_response('delivery_list.html', context)
+        return render_to_response('delivery_view.html', context)
